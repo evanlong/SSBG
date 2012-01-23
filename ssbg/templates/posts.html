@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{%block content %}
+  <div class="row post-container">
+    <div class="twocol"></div>
+    <div class="eightcol post">
+
+      <ul class="">
+        {% for p in pairs %}
+        <li>
+          <a href="{{ p.remoteUrl }}">{{ p.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+  </div>
+{% endblock %}
+

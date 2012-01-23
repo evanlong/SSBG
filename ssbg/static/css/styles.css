@@ -1,0 +1,116 @@
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono|Arvo|Habibi);
+
+a {
+    color: #666;
+}
+
+.blog-header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 24pt;
+    border-radius: 4px;
+    color: #90A6AE;
+    font-family: "Arvo", serif;
+}
+
+.section-header {
+    padding: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.section {
+    text-align: center;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.section a {
+    font-family: Arvo, serif;
+    color: #AAA;
+}
+
+.blog-footer {
+    text-align: center;
+    color: #90A6AE;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-family: Arvo, serif;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.post-title {
+    font-size:18pt;
+    font-weight:bold;
+}
+
+.post-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.post-date {
+    font-size:10pt;
+    color: #888888;
+    font-style: italic;
+}
+
+.newer-older {
+    padding-left: 10px;
+}
+
+.newer-older a {
+    font-family: Arvo, serif;
+    color: #AAA;
+}
+
+.newer-posts {
+    float:left !important;
+}
+
+.older-posts {
+    text-align:right;
+    float:right !important;
+}
+
+body {
+    font-family: 'Habibi', serif;
+    font-size: 12pt;
+    background-color: #1A2023;
+}
+
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+
+@media handheld, only screen and (max-width: 767px) {
+    .post {
+        line-height: 1.5em;
+    }
+}
+
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/*	.logo {
+	background: url(logo2x.jpg) no-repeat;
+	background-size: 212px 303px;
+	}*/
+
+}

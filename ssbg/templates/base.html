@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog Test</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 1140px Grid styles for IE -->
+    <!--[if lte IE 9]><link rel="stylesheet" href="{{ offset_prefix }}static/css/ie_1140.css" type="text/css" media="screen" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="{{ offset_prefix }}static/css/ie_reset.css" type="text/css" media="screen" /><![endif]-->
+
+    <!-- The 1140px Grid - http://cssgrid.net/ -->
+    <link rel="stylesheet" href="{{ offset_prefix }}static/css/1140.css" type="text/css" media="screen" />
+
+    <link rel="alternate" type="application/rss+xml" title="infectmac - RSS" href="{{ offset_prefix }}rss.xml" />
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="{{ offset_prefix }}static/css/styles.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ offset_prefix }}static/css/twilight_pygments.css" type="text/css" media="screen" />
+
+    <!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+    <script type="text/javascript" src="{{ offset_prefix }}static/js/css3-mediaqueries.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="row">
+        <div class="twocol"></div>
+        <div class="eightcol blog-header">
+          infectmac.com<br/>
+        </div>
+      </div>
+
+      <!-- Section -->
+      <div class="row">
+        <div class="twocol"></div>
+        <div class="eightcol section">
+          <span class="section-header"><a href="{{ offset_prefix }}index.html">Blog</a></span>
+          <span class="section-header"><a href="{{ offset_prefix }}posts.html">Posts</a></span>
+          <span class="section-header"><a href="{{ offset_prefix }}about.html">About</a></span>
+        </div>
+      </div>
+
+      {% block content %}
+      {% endblock %}
+
+      <!-- Footer -->
+      <div class="row">
+        <div class="twocol"></div>
+        <div class="eightcol blog-footer">
+          Copyright © 2012 - Evan Long
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
