@@ -98,6 +98,7 @@ def _generatePosts():
 
     postMetaData = []
     for f in os.listdir("posts"):
+        if not f.endswith(".markdown"): continue
         fParts = f.split("-")
         date = datetime.datetime(*[int(i) for i in fParts[:5]])
         title = ' '.join(fParts[5:])
