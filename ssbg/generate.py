@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+class FooBar(object):
+    pass
+
 import sys
 import os
 import datetime
@@ -18,7 +21,8 @@ def _markdownRender(renderedContent, **kwargs):
     return template.render(**kwargs)
 
 def _renderTemplateToFile(template, outputPath, **kwargs):
-    kwargs["static_path"] = os.path.join(kwargs.get("offset_prefix", ""), "static")
+    kwargs["static_path"] = os.path.join(kwargs.get("offset_prefix", ""), "static/")
+    kwargs["posts_path"] = os.path.join(kwargs.get("offset_prefix", ""), "posts/")
     kwargs["image_path"] = os.path.join(kwargs["static_path"], "img/")
     kwargs["rootUrl"] = settings.BLOG_URL
     result = template.render(**kwargs)

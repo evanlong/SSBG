@@ -1,0 +1,13 @@
+I wrote this email to a friend on February 4th, 2008. Just a list of my predictions for the next 5 years:
+
+>So within 5 years I think:
+
+>1. XMPP will be the protocol for real-time web apps
+>2. Browsers will have javascript implementations that go through a JIT. Microsoft actually has this working. They have javascript working on their DLR (which is the newer virtual machine for dynamic languages).
+>3. People may implement their own virtual machines <span class="nfakPe">in</span> the javascript just so they can easily port existing code to the web. (This point is a big maybe but could be cool)
+>4. Erlang will be cool partly because of the XMPP server that is written in erlang.
+>5. And facebook will have gone public.
+
+>So now you know and are my witness.
+
+>Evan

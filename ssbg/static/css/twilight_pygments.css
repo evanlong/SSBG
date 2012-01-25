@@ -1,6 +1,6 @@
-code { font-size: 12pt; font-family: "Courier New", Consolas, Monaco,"Lucida Console"; }
-.codehilite { background: #232323; color: #F8F8F8; overflow: auto; border-radius: 5px; -moz-border-radius: 5px; word-wrap: normal; }
-.codehilite * { font-family: "Courier New", Consolas, Monaco,"Lucida Console"; font-size: 12pt; }
+code { font-size: 10pt; font-family: "Courier New", Consolas, Monaco,"Lucida Console"; line-height: normal; }
+.codehilite { background: #232323; color: #F8F8F8; overflow: auto; border-radius: 5px; -moz-border-radius: 5px; word-wrap: normal; line-height: normal; }
+.codehilite * { font-family: "Courier New", Consolas, Monaco,"Lucida Console"; font-size: 10pt; }
 .codehilite > pre { margin: 6px; }
 .codehilite .hll { background-color: #ffffcc }
 .codehilite .c { color: #5F5A60; font-style: italic } /* Comment */
@@ -20,9 +20,9 @@ code { font-size: 12pt; font-family: "Courier New", Consolas, Monaco,"Lucida Con
 .codehilite .gs { font-weight: bold } /* Generic.Strong */
 .codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
 .codehilite .gt {  } /* Generic.Traceback */
-.codehilite .kc {  } /* Keyword.Constant */
+.codehilite .kc { color: #CDA869;  } /* Keyword.Constant */
 .codehilite .kd { color: #e9df8f;  } /* Keyword.Declaration */
-.codehilite .kn {  } /* Keyword.Namespace */
+.codehilite .kn { color: #CDA869;  } /* Keyword.Namespace */
 .codehilite .kp { color: #9B703F } /* Keyword.Pseudo */
 .codehilite .kr {  } /* Keyword.Reserved */
 .codehilite .kt {  } /* Keyword.Type */
@@ -30,15 +30,15 @@ code { font-size: 12pt; font-family: "Courier New", Consolas, Monaco,"Lucida Con
 .codehilite .s {  } /* Literal.String */
 .codehilite .na { color: #F9EE98 } /* Name.Attribute */
 .codehilite .nb { color: #CDA869 } /* Name.Builtin */
-.codehilite .nc { color: #9B859D; font-weight: bold } /* Name.Class */
+.codehilite .nc { color: #9B703F; } /* Name.Class */
 .codehilite .no { color: #9B859D } /* Name.Constant */
 .codehilite .nd { color: #7587A6 } /* Name.Decorator */
-.codehilite .ni { color: #CF6A4C; font-weight: bold } /* Name.Entity */
-.codehilite .nf { color: #9B703F; font-weight: bold } /* Name.Function */
-.codehilite .nn { color: #9B859D; font-weight: bold } /* Name.Namespace */
-.codehilite .nt { color: #CDA869; font-weight: bold } /* Name.Tag */
+.codehilite .ni { color: #CF6A4C; } /* Name.Entity */
+.codehilite .nf { color: #9B703F; } /* Name.Function */
+.codehilite .nn { color: #9B859D; } /* Name.Namespace */
+.codehilite .nt { color: #CDA869; } /* Name.Tag */
 .codehilite .nv { color: #7587A6 } /* Name.Variable */
-.codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.codehilite .ow { color: #CDA869; } /* Operator.Word */
 .codehilite .w { color: #141414 } /* Text.Whitespace */
 .codehilite .mf { color: #CF6A4C } /* Literal.Number.Float */
 .codehilite .mh { color: #CF6A4C } /* Literal.Number.Hex */

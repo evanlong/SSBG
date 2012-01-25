@@ -8,6 +8,12 @@ a {
     color: #666;
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .blog-header {
     text-align: center;
     margin-top: 20px;
@@ -45,6 +51,7 @@ a {
 }
 
 .post {
+    line-height: 1.4em;
     margin-bottom: 20px;
     padding: 10px;
     background-color: #FFFFFF;
@@ -65,6 +72,7 @@ a {
     font-size:10pt;
     color: #888888;
     font-style: italic;
+    padding-top: 5px;
 }
 
 .newer-older {
@@ -97,7 +105,7 @@ body {
 
 @media handheld, only screen and (max-width: 767px) {
     .post {
-        line-height: 1.5em;
+        /* line-height: 1.5em; */
     }
 }
 

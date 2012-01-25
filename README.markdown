@@ -44,8 +44,11 @@ in the `posts`.
 
 ### Markdown extras
 
-The markdown files have two variables that can be useful when linking to static
-content hosted by the blog. They are `{{image_path}}` and `{{static_path}}`.
+The markdown files have extra variables that can be useful when linking to blog
+content. They are
+* `{{image_path}}` - relative path to `static/img/`
+* `{{posts_path}}` - relative path to `posts/`
+* `{{static_path}}` - relative path to `static/`
 
 Example usage might be: `![alt text]({{image_path}}woman.jpg)` or 
 `[link for file download]({{static_path}}files/download.zip)`

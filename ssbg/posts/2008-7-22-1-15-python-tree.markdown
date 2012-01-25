@@ -1,0 +1,43 @@
+I implement a simple tree with the DFS and BFS defined using python generators.
+
+    :::python
+    class Tree:
+        def __init__(self,data):
+            self.children = []
+            self.data = data
+     
+        def dfs(self):
+            yield self
+            if len(self.children) == 0:
+                return
+            for child in self.children:
+                for c in child.dfs():
+                    yield c
+     
+        def bfs(self):
+            yield self
+            queue = list(self.children)
+            while len(queue) > 0:
+                first = queue[0]
+                queue = queue[1:]
+                queue.extend(first.children)
+                yield first
+                
+     
+    if __name__ == "__main__":
+        root = Tree(-1)
+        root.children = [Tree(i) for i in range(5)]
+        for i in range(5):
+            root.children[i].children = [Tree(i*j) for j in range(3)]
+     
+        #-1,0,0,0,0...
+        for node in root.dfs():
+            print node.data
+     
+        print
+        print
+     
+        #-1,0,1,2,3,4,0,0,0,0,1,2,0,2,4...
+        for node in root.bfs():
+            print node.data
+
