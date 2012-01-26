@@ -184,6 +184,10 @@ def main():
         shutil.copytree("static", os.path.join(settings.OUTPUT_DIR, "static"))
         _generatePosts()
 
+        if settings.DEPLOY_CMD:
+            os.chdir(settings.OUTPUT_DIR)
+            os.system(settings.DEPLOY_CMD)
+
 if __name__ == "__main__":
     main()
 
