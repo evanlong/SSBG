@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-class FooBar(object):
-    pass
-
 import sys
 import os
 import datetime
@@ -172,8 +169,14 @@ def main():
         filePath = os.path.join("posts", fname)
         with open(filePath, "w") as f: pass
     elif subcommand == "make":
-        shutil.rmtree(settings.OUTPUT_DIR, ignore_errors=True)
-        os.mkdir(settings.OUTPUT_DIR)
+        if not os.path.exists(settings.OUTPUT_DIR):
+            os.mkdir(settings.OUTPUT_DIR)
+        else:
+            cwd = os.getcwd()
+            os.chdir(settings.OUTPUT_DIR)
+            #clean out everything except the dotfiles int he root dir
+            os.system("ls -1 | xargs rm -rf")
+            os.chdir(cwd)
         shutil.copytree("static", os.path.join(settings.OUTPUT_DIR, "static"))
         _generatePosts()
 
