@@ -13,15 +13,19 @@ import settings
 #blogger data import
 #analytics
 
+def _addStaticTemplateVar(kwargs):
+    kwargs["static_path"] = os.path.join(kwargs.get("offset_prefix", ""), "static/")
+    kwargs["posts_path"] = os.path.join(kwargs.get("offset_prefix", ""), "posts/")
+    kwargs["image_path"] = os.path.join(kwargs["static_path"], "img/")
+    kwargs["rootUrl"] = settings.BLOG_URL
+    return kwargs
+
 def _markdownRender(renderedContent, **kwargs):
     template = Template(renderedContent)
     return template.render(**kwargs)
 
 def _renderTemplateToFile(template, outputPath, **kwargs):
-    kwargs["static_path"] = os.path.join(kwargs.get("offset_prefix", ""), "static/")
-    kwargs["posts_path"] = os.path.join(kwargs.get("offset_prefix", ""), "posts/")
-    kwargs["image_path"] = os.path.join(kwargs["static_path"], "img/")
-    kwargs["rootUrl"] = settings.BLOG_URL
+    _addStaticTemplateVar(kwargs)
     result = template.render(**kwargs)
     result = _markdownRender(result, **kwargs)
     with codecs.open(outputPath, "w", encoding="utf-8") as f:
@@ -50,7 +54,7 @@ def _renderRssFeedToFile(postMetaData, outfile):
                 title = p["title"],
                 link = url,
                 pubDate = p["date"],
-                description = p["content"],
+                description = _markdownRender(p["content"], **_addStaticTemplateVar({})),
                 guid = PyRSS2Gen.Guid(url)
                 ))
 
