@@ -10,9 +10,6 @@ import markdown
 import PyRSS2Gen
 import settings
 
-#blogger data import
-#analytics
-
 def _addStaticTemplateVar(kwargs):
     kwargs["static_path"] = os.path.join(kwargs.get("offset_prefix", ""), "static/")
     kwargs["posts_path"] = os.path.join(kwargs.get("offset_prefix", ""), "posts/")
@@ -165,14 +162,10 @@ def _generatePosts():
 def main():
     assert len(sys.argv) >= 2
 
-    subcommand = sys.argv[1]
-    if subcommand == "new_post":
-        assert len(sys.argv) >= 3
-        title = sys.argv[2]
-        fname = "%s-%s.markdown" % (datetime.datetime.now().strftime("%Y-%m-%d-%H-%M"), title.replace(" ", "-"))
-        filePath = os.path.join("posts", fname)
-        with open(filePath, "w") as f: pass
-    elif subcommand == "make":
+    def _buildHelper(isTest=False):
+        if isTest:
+            settings.OUTPUT_DIR = settings.TEST_OUTPUT_DIR
+
         if not os.path.exists(settings.OUTPUT_DIR):
             os.mkdir(settings.OUTPUT_DIR)
         else:
@@ -184,9 +177,21 @@ def main():
         shutil.copytree("static", os.path.join(settings.OUTPUT_DIR, "static"))
         _generatePosts()
 
-        if settings.DEPLOY_CMD:
+        if not isTest and settings.DEPLOY_CMD:
             os.chdir(settings.OUTPUT_DIR)
             os.system(settings.DEPLOY_CMD)
+
+    subcommand = sys.argv[1]
+    if subcommand == "new_post":
+        assert len(sys.argv) >= 3
+        title = sys.argv[2]
+        fname = "%s-%s.markdown" % (datetime.datetime.now().strftime("%Y-%m-%d-%H-%M"), title.replace(" ", "-"))
+        filePath = os.path.join("posts", fname)
+        with open(filePath, "w") as f: pass
+    elif subcommand == "make":
+        _buildHelper();
+    elif subcommand == "test":
+        _buildHelper(isTest=True)
 
 if __name__ == "__main__":
     main()

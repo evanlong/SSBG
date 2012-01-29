@@ -1,6 +1,6 @@
 code { font-size: 10pt; font-family: "Courier New", Consolas, Monaco,"Lucida Console"; line-height: normal; }
 .codehilite { background: #232323; color: #F8F8F8; overflow: auto; border-radius: 5px; -moz-border-radius: 5px; word-wrap: normal; line-height: normal; }
-.codehilite * { font-family: "Courier New", Consolas, Monaco,"Lucida Console"; font-size: 10pt; }
+.codehilite * { font-family: Monaco, Consolas, "Courier New", "Lucida Console"; font-size: 10pt; }
 .codehilite > pre { margin: 6px; }
 .codehilite .hll { background-color: #ffffcc }
 .codehilite .c { color: #5F5A60; font-style: italic } /* Comment */
