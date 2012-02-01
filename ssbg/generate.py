@@ -125,7 +125,7 @@ def _generatePosts():
 
         postIsLast = (post == postMetaData[-1])
         postIsFirst = (post == postMetaData[0])
-        
+
         _renderTemplateForSubdir(indexTemplate,
                                  _pathForOutput(post["remoteUrl"]),
                                  posts=[post],
@@ -175,6 +175,7 @@ def main():
             os.system("ls -1 | xargs rm -rf")
             os.chdir(cwd)
         shutil.copytree("static", os.path.join(settings.OUTPUT_DIR, "static"))
+        shutil.copyfile("CNAME", os.path.join(settings.OUTPUT_DIR, "CNAME"))
         _generatePosts()
 
         if not isTest and settings.DEPLOY_CMD:
