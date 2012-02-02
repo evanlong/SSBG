@@ -56,7 +56,7 @@ def _renderRssFeedToFile(postMetaData, outfile):
                 ))
 
     rss = PyRSS2Gen.RSS2(
-        title = "infectmac.com",
+        title = settings.BLOG_URL,
         link = settings.BLOG_URL,
         description = "a blog of fun",
         lastBuildDate = datetime.datetime.utcnow(),
