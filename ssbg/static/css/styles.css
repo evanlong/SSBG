@@ -96,7 +96,9 @@ img {
 body {
     font-family: 'Habibi', serif;
     font-size: 12pt;
-    background-color: #1A2023;
+    /* background-color: #1A2023; */
+
+    background-image:url("../img/background.png");
 }
 
 /* ============================= */
@@ -114,7 +116,7 @@ body {
 /* ! Provide higher res assets for iPhone 4   */
 /* ========================================== */
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
 
 /*	.logo {
 	background: url(logo2x.jpg) no-repeat;
