@@ -22,25 +22,32 @@ is meant for me. But maybe someone else will find it of some use.
    rendered to `{output}/index.html`, each `{output}/pages/{n}.html`, and each
    `/posts/YEAR-MONTH-DAY-HOUR-MINUTE-Title-Here.html`
    * `posts.html` - List of all the posts the blog contains
-   
+
 ### Settings
 
 The settings are specified with global variables in `settings.py`.
 
 * `BLOG_URL` - url to the root of the blog. Example: `http://infectmac.com/`
 * `OUTPUT_DIR` - the directory that the blog will be emitted to
-* `POSTS_PER_PAGE` - Maximum number of posts that should be show on a single 
+* `POSTS_PER_PAGE` - Maximum number of posts that should be show on a single
 page
+* `DEPLOY_CMD` - The shell command that will be run from the `OUTPUT_DIR` in
+  order to deploy the latest build. For example this could be:
+  `git add .; git commit -am "new post"; git push`
+* `TEST_OUTPUT_DIR` - When the `test` subcommand is used the `OUTPUT_DIR` and
+  `DEPLOY_CMD` are ignored. Instead the output is redirected to
+  `TEST_OUTPUT_DIR`
 
 ### Usage:
 
 `generate.py` has the following subcommands:
 
-* `make` - Generate the blog and output it to the directory specified in 
+* `make` - Generate the blog and output it to the directory specified in
 `settings.py`.
 * `new_post` - Accepts a single argument for the title of the post. It will then
 create a file with the format `YEAR-MONTH-DAY-HOUR-MINUTE-Title-Here.markdown`
 in the `posts`.
+* `test` - The same as make but does not run the deploy command
 
 ### Markdown extras
 
@@ -50,11 +57,16 @@ content. They are
 * `{{posts_path}}` - relative path to `posts/`
 * `{{static_path}}` - relative path to `static/`
 
-Example usage might be: `![alt text]({{image_path}}woman.jpg)` or 
+Example usage might be: `![alt text]({{image_path}}woman.jpg)` or
 `[link for file download]({{static_path}}files/download.zip)`
 
 Both variables will render as relative paths to either the image or static
 directory.
+
+### Tips
+
+This is a quick and dirty way to link to images:
+`[![procmon]({{image_path}}procmon.png)]({{image_path}}procmon.png)`
 
 ### Credits:
 
