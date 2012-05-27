@@ -19,9 +19,6 @@
     <!-- Your styles -->
     <link rel="stylesheet" href="{{ offset_prefix }}static/css/styles.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="{{ offset_prefix }}static/css/twilight_pygments.css" type="text/css" media="screen" />
-
-    <!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
-    <script type="text/javascript" src="{{ offset_prefix }}static/js/css3-mediaqueries.js"></script>
   </head>
 
   <body>
@@ -66,6 +63,11 @@
       pageTracker._trackPageview();
     </script>
 
+    <!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+    <script type="text/javascript" src="{{ static_path }}js/css3-mediaqueries.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="{{ static_path }}js/ssbg.js"></script>
   </body>
 
 </html>
