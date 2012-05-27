@@ -65,8 +65,7 @@ directory.
 
 ### Tips
 
-This is a quick and dirty way to link to images:
-`[![procmon]({{image_path}}procmon.png)]({{image_path}}procmon.png)`
+All images in a post will be linked to themselves by the `ssbg.js`.
 
 ### Credits:
 
